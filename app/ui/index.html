@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HairInfo Salon Manager</title>
+    <link rel="stylesheet" href="/ui/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <h1>HairInfo Salon Manager</h1>
+        <p>대시보드와 예약 관리를 한 화면에서 처리하세요.</p>
+      </header>
+
+      <main class="grid">
+        <section class="card metrics">
+          <h2>오늘 요약</h2>
+          <div class="metric-grid" id="metrics"></div>
+        </section>
+
+        <section class="card form-card">
+          <h2>빠른 예약 등록</h2>
+          <form id="appointment-form">
+            <label>고객 ID<input type="number" name="customer_id" min="1" required /></label>
+            <label>디자이너 ID<input type="number" name="stylist_id" min="1" required /></label>
+            <label>서비스 ID<input type="number" name="service_id" min="1" required /></label>
+            <label>예약 시작<input type="datetime-local" name="starts_at" required /></label>
+            <label>메모<input type="text" name="notes" maxlength="255" /></label>
+            <button type="submit">예약 생성</button>
+          </form>
+          <p id="form-message" class="message"></p>
+        </section>
+
+        <section class="card table-card">
+          <div class="table-header">
+            <h2>최근 예약</h2>
+            <button id="reload">새로고침</button>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>고객</th>
+                <th>디자이너</th>
+                <th>서비스</th>
+                <th>시작</th>
+                <th>상태</th>
+              </tr>
+            </thead>
+            <tbody id="appointments-body"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/ui/app.js"></script>
+  </body>
+</html>

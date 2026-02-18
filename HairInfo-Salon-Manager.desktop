@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=HairInfo Salon Manager
+Comment=Launch HairInfo salon manager server and UI
+Exec=python3 /workspace/dlwltkd/launcher.py
+Path=/workspace/dlwltkd
+Terminal=false
+Categories=Office;
