@@ -45,6 +45,13 @@ python launcher.py
 - 배포 ZIP: `dist/hairinfo-salon-manager-macos.zip`
 - 설치 DMG: `dist/hairinfo-salon-manager-macos.dmg`
 
+### 5) Linux 환경에서 macOS 실행파일 만들기 (원클릭)
+```bash
+# GitHub Actions > build-macos-app > Run workflow
+```
+- 이 저장소의 CI가 macOS runner에서 `.app/.dmg`를 빌드해 Artifact로 제공합니다.
+- 태그(`v1.0.0` 형식) 푸시 시 Release에 `.zip/.dmg`가 자동 첨부됩니다.
+
 ## Linux 데스크탑 바로가기
 - `HairInfo-Salon-Manager.desktop` 파일을 더블클릭하면 실행기(`launcher.py`)가 열립니다.
 - 필요 시 `Exec`, `Path` 경로를 로컬 경로에 맞게 수정하세요.
