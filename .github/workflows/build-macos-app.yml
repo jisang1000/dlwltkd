@@ -1,0 +1,44 @@
+name: build-macos-app
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: macos-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build app + dmg
+        run: |
+          chmod +x scripts/build_macos_app.sh scripts/build_macos_dmg.sh
+          ./scripts/build_macos_app.sh
+          ./scripts/build_macos_dmg.sh
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: hairinfo-macos
+          path: |
+            dist/HairInfo Salon Manager.app
+            dist/hairinfo-salon-manager-macos.zip
+            dist/hairinfo-salon-manager-macos.dmg
+
+      - name: Attach artifacts to release (tag push only)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/hairinfo-salon-manager-macos.zip
+            dist/hairinfo-salon-manager-macos.dmg

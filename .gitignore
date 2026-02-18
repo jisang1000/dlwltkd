@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.venv/
+hairinfo.db
+test_hairinfo.db

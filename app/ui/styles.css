@@ -1,0 +1,168 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --text: #14213d;
+  --sub: #5f6b7a;
+  --primary: #3366ff;
+  --border: #e5eaf2;
+  --ok: #0f9d58;
+  --error: #d93025;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.topbar p {
+  margin: 8px 0 0;
+  color: var(--sub);
+}
+
+.grid {
+  margin-top: 24px;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 22px rgba(12, 24, 48, 0.06);
+}
+
+.metrics {
+  grid-column: span 12;
+}
+
+.metric-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.metric-item {
+  padding: 14px;
+  border-radius: 10px;
+  background: #f8faff;
+  border: 1px solid #dfe7ff;
+}
+
+.metric-item .label {
+  color: var(--sub);
+  font-size: 13px;
+}
+
+.metric-item .value {
+  margin-top: 8px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.form-card {
+  grid-column: span 4;
+}
+
+.form-card form {
+  display: grid;
+  gap: 10px;
+}
+
+.form-card label {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+}
+
+input,
+button {
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.04);
+}
+
+.table-card {
+  grid-column: span 8;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: left;
+  font-size: 14px;
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.status {
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 12px;
+  display: inline-block;
+  background: #edf2ff;
+}
+
+.message {
+  min-height: 20px;
+  font-size: 13px;
+}
+
+.message.ok {
+  color: var(--ok);
+}
+
+.message.error {
+  color: var(--error);
+}
+
+@media (max-width: 960px) {
+  .form-card,
+  .table-card {
+    grid-column: span 12;
+  }
+}
