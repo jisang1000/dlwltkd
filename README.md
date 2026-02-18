@@ -35,6 +35,16 @@ python launcher.py
 ```
 - 산출물: `dist/hairinfo-launcher`
 
+
+### 4) macOS 실행파일(.app/.dmg) 빌드
+```bash
+./scripts/build_macos_app.sh
+./scripts/build_macos_dmg.sh
+```
+- 앱 번들: `dist/HairInfo Salon Manager.app`
+- 배포 ZIP: `dist/hairinfo-salon-manager-macos.zip`
+- 설치 DMG: `dist/hairinfo-salon-manager-macos.dmg`
+
 ## Linux 데스크탑 바로가기
 - `HairInfo-Salon-Manager.desktop` 파일을 더블클릭하면 실행기(`launcher.py`)가 열립니다.
 - 필요 시 `Exec`, `Path` 경로를 로컬 경로에 맞게 수정하세요.

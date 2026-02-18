@@ -18,6 +18,7 @@ dev = [
 ]
 packaging = [
   "pyinstaller>=6.10.0",
+  "setuptools>=70.0.0",
 ]
 
 [tool.pytest.ini_options]
