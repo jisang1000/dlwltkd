@@ -8,11 +8,14 @@ from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 
 from . import crud, schemas
+from .ai.routes import router as ai_router
 from .database import Base, engine, get_db
 
 app = FastAPI(title="HairInfo 헤어샵 관리 API", version="0.2.0")
 
 Base.metadata.create_all(bind=engine)
+
+app.include_router(ai_router)
 
 UI_DIR = Path(__file__).parent / "ui"
 app.mount("/ui", StaticFiles(directory=UI_DIR), name="ui")
