@@ -3,3 +3,4 @@ __pycache__/
 .venv/
 hairinfo.db
 test_hairinfo.db
+*.egg-info/
